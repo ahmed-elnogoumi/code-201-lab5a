@@ -30,7 +30,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
   let multiply = a * b;
-  let multiply_array = [multiply, 'The product of ' + a + ' and ' + b + ' is ' + multiply + "."];
+  let multiply_array = [multiply, 'The product of ' + a + ' and ' + b + ' is ' + multiply + '.'];
   return multiply_array;
 }
 
@@ -52,11 +52,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  let sum_value = sum(a, sum(b, c)[0])[0];
+  let multiply_value = multiply(a, multiply(b, c)[0])[0];
 
+  let sumAndMultiply_array = [sum_value, multiply_value, a + ' and ' + b + ' and ' + c + ' sum to ' + sum_value + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiply_value + '.'];
+  return sumAndMultiply_array;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -74,12 +78,15 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  let array_sum = sum(testArray[0], sum(testArray[1], testArray[2])[0])[0];
+  let sumArray_array = [array_sum, testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + array_sum + ' is their sum.'];
 
+  return sumArray_array;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
